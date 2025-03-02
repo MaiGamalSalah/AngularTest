@@ -1,0 +1,41 @@
+<!-- Property Binding (One Way) -->
+<h1 [style.color]="val ? 'red' : 'green'" class="container text-center my-4">
+  MAI GAMAL SALAH
+</h1>
+
+<!-- Table with Structural Directive *ngFor -->
+<table class="table table-striped container my-4">
+  <thead class="thead-dark">
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Job</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of content">
+      <td>{{ user.name }}</td>
+      <td>{{ user.age }}</td>
+      <td>{{ user.job }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Attribute Directive with ngStyle and Two Way Binding -->
+<div class="container my-4 p-3 border rounded">
+  <div [ngStyle]="{'color': val ? 'pink' : 'red'}">
+    <label for="nameInput" class="form-label">Enter Name:</label>
+    <input id="nameInput" type="text" class="form-control mb-2" [(ngModel)]="name">
+    <p class="fw-bold">{{ name }}</p>
+    <button class="btn btn-primary" (click)="change()">Change</button>
+  </div>
+</div>
+
+<!-- Structural Directive with ngSwitch -->
+<div class="container my-4">
+  <div [ngSwitch]="color" class="text-center">
+    <p *ngSwitchCase="'red'" class="text-danger">Color is Red</p>
+    <p *ngSwitchCase="'green'" class="text-success">Color is Green</p>
+    <p *ngSwitchDefault class="text-secondary">Color is not defined</p>
+  </div>
+</div>
