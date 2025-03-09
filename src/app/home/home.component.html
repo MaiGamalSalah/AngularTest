@@ -1,3 +1,5 @@
+<div class="container my-4">
+  
 <!-- Property Binding (One Way) -->
 <h1 [style.color]="val ? 'red' : 'green'" class="container text-center my-4">
   MAI GAMAL SALAH
@@ -38,4 +40,18 @@
     <p *ngSwitchCase="'green'" class="text-success">Color is Green</p>
     <p *ngSwitchDefault class="text-secondary">Color is not defined</p>
   </div>
+</div>
+
+
+
+
+
+  <div class="container row">
+  <div class="col-md-3 my-3" *ngFor="let user of recipes">
+    <app-card 
+     [id]="user.recipe_id" [cardTitle]="user.title" [cardImageUrl]="user.image_url" [btnText]="'show more'">
+   </app-card>
+ </div>
+
+ </div>
 </div>

@@ -1,0 +1,31 @@
+<div *ngIf="!loading" class="container my-5">
+    <h1 class="text-center text-primary my-4">Recipe Details</h1>
+    
+    <div class="card shadow-lg p-4">
+        <div class="row g-4">
+            <div class="col-md-6 text-center">
+                <img [src]="recipesDetails?.recipe?.image_url" alt="recipe image" class="img-fluid rounded shadow">
+            </div>  
+
+            <div class="col-md-6">
+                <h3 class="text-dark fw-bold">{{ recipesDetails?.recipe?.title }}</h3>
+                <p class="text-muted">{{ recipesDetails?.recipe?.description }}</p>
+                
+                <h4 class="text-success mt-4">Ingredients</h4>
+                <ul class="list-group list-group-flush">
+                    <li *ngFor="let ingredient of recipesDetails?.recipe?.ingredients" 
+                        class="list-group-item">
+                         {{ ingredient }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="loading" class="d-flex flex-column align-items-center justify-content-center vh-100">
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <p class="mt-3 text-secondary fw-bold">Fetching recipe details...</p>
+</div>
