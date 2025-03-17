@@ -14,6 +14,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RecipeOfDetailComponent } from './recipe-of-detail/recipe-of-detail.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

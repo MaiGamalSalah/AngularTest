@@ -1,8 +1,8 @@
 <div class="container my-4">
   
 <!-- Property Binding (One Way) -->
-<h1 [style.color]="val ? 'red' : 'green'" class="container text-center my-4">
-  MAI GAMAL SALAH
+<h1 [style.color]="val ? 'red' : 'green'" class="container text-center my-4 fw-bold">
+  Kitchen Management Team
 </h1>
 
 <!-- Table with Structural Directive *ngFor -->
@@ -11,14 +11,16 @@
     <tr>
       <th>Name</th>
       <th>Age</th>
-      <th>Job</th>
+      <th>Role</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let user of content">
       <td>{{ user.name }}</td>
       <td>{{ user.age }}</td>
-      <td>{{ user.job }}</td>
+      <td [ngStyle]="{'color': user.role === 'Head Chef' ? 'red' : 'black'}">
+        {{ user.role }}
+      </td>
     </tr>
   </tbody>
 </table>
@@ -34,10 +36,12 @@
 </div>
 
 <!-- Structural Directive with ngSwitch -->
+
+
 <div class="container my-4">
   <div [ngSwitch]="color" class="text-center">
-    <p *ngSwitchCase="'red'" class="text-danger">Color is Red</p>
-    <p *ngSwitchCase="'green'" class="text-success">Color is Green</p>
+    <p *ngSwitchCase="'red'" class="text-danger">Mune pizza</p>
+    <p *ngSwitchCase="'green'" class="text-success">Mune drink</p>
     <p *ngSwitchDefault class="text-secondary">Color is not defined</p>
   </div>
 </div>

@@ -42,12 +42,14 @@ name:string = 'write';
 color:string = 'red';
 
   content:Users[]=[
-    {name:'mohamed',age:25,job:'developer'},
-    {name:'ahmed',age:30,job:'designer'},
-    {name:'ali',age:35,job:'manager'},
-    {name:'khaled',age:40,job:'developer'},
+    { name: 'John Smith', age: 35, role: 'Head Chef' },
+    { name: 'Emily Johnson', age: 28, role: 'Sous Chef' },
+    { name: 'Michael Brown', age: 40, role: 'Kitchen Manager' },
+    { name: 'Sarah White', age: 25, role: 'Pastry Chef' },
+    { name: 'David Wilson', age: 30, role: 'Dishwasher' }
 
   ]
+ 
   change(){
     this.val = !this.val;
     this.name = this.val ? 'write' : 'read';

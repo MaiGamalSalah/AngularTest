@@ -5,6 +5,7 @@ import { AboutComponent } from './about/about.component';
 import { ParentComponent } from './parent/parent.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RecipeOfDetailComponent } from './recipe-of-detail/recipe-of-detail.component';
+import { recipegGuard } from './recipeg.guard';
 
 const routes: Routes = [
   {
@@ -16,7 +17,11 @@ const routes: Routes = [
     path:'home',component:HomeComponent
   },
   {
-    path:'recipe/:id',component:RecipeOfDetailComponent
+  path:'products',loadChildren:()=>
+    import('./featurModules/products/products.module').then(m=>m.ProductsModule)
+  },
+  {
+    path:'recipe/:id',component:RecipeOfDetailComponent,canActivate:[recipegGuard]
   },
   {
     path:'about',component:AboutComponent
